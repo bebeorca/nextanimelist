@@ -7,7 +7,6 @@ const DetailCard = ({ status, season, year, rank, score, scored_by, episodes, ge
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-
     return (
         <div className='flex gap-2 text-white overflow-x-auto'>
             <div className='border-2 min-w-fit rounded-lg p-2 shadow text-lg flex items-center justify-center'>
@@ -26,9 +25,13 @@ const DetailCard = ({ status, season, year, rank, score, scored_by, episodes, ge
             <div className='border-2 min-w-fit rounded-lg p-2 shadow text-lg flex items-center justify-center'>
                 <p>{episodes ?? 'null'} episodes</p>
             </div>
-            <div className='border-2 min-w-fit rounded-lg p-2 shadow text-lg flex items-center justify-center'>
-                <p>{genre ?? 'null'}</p>
-            </div>
+            {genre?.flatMap(item => {
+                return (
+                    <div className='border-2 min-w-fit rounded-lg p-2 shadow text-lg flex items-center justify-center'>
+                        <p>{item.name}</p>
+                    </div>
+                )
+            })}
         </div>
     )
 }
