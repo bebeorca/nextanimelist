@@ -1,12 +1,16 @@
+"use client";
 import { Star } from '@phosphor-icons/react'
 import Link from 'next/link'
 import React from 'react'
+import { getAnimeEpisodes } from '@/libs/api-libs';
 
-const EpisodeCard = ({ api }) => {
+const EpisodeCard = async ({ id }) => {
+
+  const apiEpisodes = await getAnimeEpisodes(id)
 
   return (
     <div>
-      {api.data?.map((data => {
+      {apiEpisodes.data?.map((data => {
         const date = data.aired
         const aired = date.split('T')[0]
         return (

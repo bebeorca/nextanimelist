@@ -14,8 +14,12 @@ const Page = async () => {
             <div className='flex flex-col items-center'>
                 <h1 className='text-2xl'>{user.name}</h1>
                 <h1 className=''>{user.email}</h1>
+                <div className="py-8 gap-2 flex flex-wrap">
+                    <Link href="/users/dashboard/collection" className="bg-secondary p-2 rounded">Koleksiku</Link>
+                    <Link href="/users/dashboard/comments" className="bg-secondary p-2 rounded">Komentarku</Link>
+                </div>
             </div>
-            <Link href="/api/auth/signout">Sign Out</Link>
+            <Link href="/api/auth/signout" className="fixed bottom-8 right-8 p-2 bg-primary text-dark rounded min-w-fit">Sign Out</Link>
         </div>
     )
 }

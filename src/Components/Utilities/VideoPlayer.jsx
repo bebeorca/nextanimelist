@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { XCircle } from '@phosphor-icons/react'
 import React, { useState } from 'react'
 import YouTube from 'react-youtube'
